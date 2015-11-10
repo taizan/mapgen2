@@ -1,0 +1,36 @@
+body {
+    display: block;
+    margin: 0; 
+    padding: 0;
+}
+
+
+#map {
+    position: absolute;
+}
+
+#island {
+    //position: absolute;
+    top:0;
+    left:0;
+    display: block;
+} 
+
+
+#icons { 
+    position: absolute;
+    top:0;
+    left:0;
+    display: block;
+    width:100%;
+    height:100%;
+}
+
+.name {
+    background:rgba(245, 245, 243, 0.70);
+    font-size: 10px;
+    padding:5px;
+     border-radius: 5px;        /* CSS3ëêàƒ */  
+    -webkit-border-radius: 5px;    /* Safari,Google Chromeóp */  
+    -moz-border-radius: 5px;   /* Firefoxóp */  
+}

@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Map</title>
+        
+        <link href="css/map.css" rel="stylesheet">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/rhill-voronoi-core.min.js"></script>
+        <script type="text/javascript" src="js/paper.js"></script>
+        <script type="text/javascript" src="js/Simplex.js"></script>
+        <script type="text/javascript" src="js/perlin.js"></script>
+        <script type="text/javascript" src="js/namegen.js"></script>
+        <script type="text/javascript" src="js/Island.js"></script>
+	</head>
+
+	<body>
+        <div id="map">
+            <canvas id="island" resize="true"></canvas>
+            <div id="icons"></div>
+            <canvas id="perlin" hidden="true"></canvas>
+        </div>
+        <script type="application/javascript">
+            paper.install(window);
+            window.onload = function(e) {
+                paper.setup('island');
+
+                var islandCanvas = document.getElementById('island');
+                var perlinCanvas = document.getElementById('perlin');
+
+                islandCanvas.onclick = function() {
+                    //Island.toggleDebug();
+                    Island.toggleName();
+                    //perlinCanvas.style.display = (perlinCanvas.style.display == 'block' ? 'none' : 'block');
+                };
+
+                Island.init( {
+                    allowDebug: false, // if set to true, you can clic on the map to enter "debug" mode. Warning : debug mode is slow to initialize, set to false for faster rendering.
+                    nbSites: 1500, // nb of voronoi cell
+                    shading: 0.0,
+                    shadeOcean: false
+                });
+            };
+        </script>
+        <noscript>You need to enable Javascript in your browser for this page to display properly.</noscript>
+	</body>
+</html>
